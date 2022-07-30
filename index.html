@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+  <header>
+    <h1>Rock, Paper, Scissors</h1>
+    <p>A battle to 5</p>
+    <p>Who will be the victor!</p>
+  </header>
+  <!-- Start Score Tracker -->
+  <div id="scoreTrackerContainer">
+    <div class="sTTotals">
+      <div class="wins">
+        <p> <a id="clicks">0</a></p>
+        <p>Wins</p>
+      </div>
+      <div class="ties">
+        <p> <a id="clicks2">0</a></p>
+        <p>Ties</p>
+      </div>
+      <div class="losses">
+        <p> <a id="clicks3">0</a></p>
+        <p>Losses</p>
+      </div>
+    </div>
+    <p class="sTResaults">holder text</p>
+  </div>
+  <!-- End Score Tracker -->
+  <!-- Start Choices -->
+  <div id="userChoice">
+    <input type="image" src=".//imgs/rock.jpg" alt="rock" id="rock" onClick="onClick()">
+    <input type="image" src=".//imgs/paper.jpg" alt="paper" id="paper" onClick="onClick()">
+    <input type="image" src=".//imgs/scissors.jpg" alt="scissors" id="scissors" onClick="onClick()">
+  </div>
+</body>
+<footer>
+  <p>copywrite Erik Anderson &copy; 2022</p>
+</footer>
+</html>

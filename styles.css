@@ -1,0 +1,41 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: black;
+  color: antiquewhite;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+}
+#scoreTrackerContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:25vw;
+  height: 20vh;
+}
+.sTTotals {
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.wins, .ties, .losses {
+  width:50px;
+}
+#userChoice{
+  width:75vw;
+  display: flex;
+  justify-content: space-between;
+}
+#rock, #paper, #scissors {
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+}
