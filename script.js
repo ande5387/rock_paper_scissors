@@ -35,22 +35,20 @@ function endOfGame (){
 
 function win(userChoice, computerChoice){
   wins++;
-  endOfGame();
   userWins_p.innerHTML = wins;
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML =convertToWord(userChoice) + " beats " + convertToWord(computerChoice);
-  console.log(wins);
+  endOfGame();
 }
 
 function loss(userChoice, computerChoice){
   losses++;
-  endOfGame();
   userWins_p.innerHTML = wins;
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML = convertToWord(computerChoice) + " beats " + convertToWord(userChoice);
-  console.log(losses);
+  endOfGame();
 }
 
 function tie(){
