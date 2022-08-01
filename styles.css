@@ -31,11 +31,11 @@ body {
   width:50px;
 }
 #userChoice{
-  width:75vw;
+  width: 75vw;
   display: flex;
   justify-content: space-between;
 }
-#rock, #paper, #scissors {
+#r, #p, #s {
   border: 1px solid whitesmoke;
   border-radius: 10px;
 }
