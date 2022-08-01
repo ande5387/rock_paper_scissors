@@ -24,6 +24,17 @@ function convertToWord(letter){
 
 }
 
+/*
+function endOfGame (){
+  if (wins == 5) {
+    if(!alert('You Win!\nPlay Again?')){window.location.reload();};
+  }
+  else if (losses == 5){
+    if(!alert('You Win!\nPlay Again?')){window.location.reload();};
+  }
+  else continue;
+}
+*/
 function win(userChoice, computerChoice){
   wins++;
   userWins_p.innerHTML = wins;
