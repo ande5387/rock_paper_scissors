@@ -5,16 +5,16 @@ let losses = 0;
 const userWins_p = document.getElementById("user-wins");
 const ties_p = document.getElementById("ties");
 const computerWins_p = document.getElementById("computer-wins");
-const restults_p = document.querySelector(".sTResults");
-const rock_input = document.getElementById("r");
-const paper_input = document.getElementById("p");
-const scissors_input = document.getElementById("s");
+const restults_p = document.getElementById("results");
+const rock_div = document.getElementById("r");
+const paper_div = document.getElementById("p");
+const scissors_div = document.getElementById("s");
 
 
 function getComputerChoice() {
   const arr = ["r", "p", "c"];
   const computerChoice = Math.floor(Math.random() * 3);
-  return arr
+  return arr[computerChoice];
 }
 
 function convertToWord(letter){
@@ -57,12 +57,12 @@ function game(userChoice) {
     case "rs":
     case "pr":
     case "sp":
-      win();
+      win(userChoice, computerChoice);
       break;
     case "rp":
     case "ps":
     case "sr":
-      loss();
+      loss(userChoice, computerChoice);
       break;
     case "rr":
     case "pp":
@@ -72,41 +72,17 @@ function game(userChoice) {
   }
 }
 
-function main (){
-  rock_input.addEventListener('click',function() {
+
+
+// event listeners (not curretly functioning propperly)
+function main(){
+  rock_div.addEventListener('click',function() {
     game("r");
   })
-  paper_input.addEventListener('click',function() {
-    game("");
+  paper_div.addEventListener('click',function() {
+    game("p");
   })
-  scissors_input.addEventListener('click',function() {
+  scissors_div.addEventListener('click',function() {
     game("s");
   })
 }
-
-// compair computerChoice to userChoice  and increment tally
-/*while (wins<=5 || losses <=5){
-
-  if(getUserChoice() == getComputerChoice()){
-    ties++;
-    ties_p.innerHTML=ties;
-    break;
-  } 
-  else if (getUserChoice()> getComputerChoice()){
-    wins++;
-    userWins_p.innerHTML = wins;
-    break;
-  } 
-  else {
-    losses++;
-    computerWins_p.innerHTML = losses;
-  }
-}*/
-
-// winner declared
-/*if (wins == 5){
-  document.getElementById(".sTResaults").innerHTML = "User Wins";
-}
-else if(losses == 5){
-  document.getElementById(".sTResaults").innerHTML = "Computer Wins";
-}*/

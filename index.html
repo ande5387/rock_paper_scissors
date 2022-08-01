@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
   <title>Rock Paper Scissors Game</title>
 </head>
 <body>
@@ -18,39 +17,36 @@
   <div id="scoreTrackerContainer">
     <div class="sTTotals">
       <div class="wins">
-        <p id="user-wins"> </p>
+        <p id="user-wins">0</p>
         <p>Wins</p>
       </div>
       <div class="ties">
-        <p id="ties"> </p>
+        <p id="ties">0</p>
         <p>Ties</p>
       </div>
       <div class="losses">
-        <p id="computer-wins"> </p>
+        <p id="computer-wins">0</p>
         <p>Losses</p>
       </div>
     </div>
-    <p class="sTResaults">holder text</p>
+    <p id="results"></p>
   </div>
   <!-- End Score Tracker -->
   <!-- Start Choices -->
   <div id="userChoice">
-    <div id="r">
+    <div id="r" onclick="game('r')">
       <img src=".//imgs/rock.jpg" alt="rock">
     </div>
-    <div id="p">
+    <div id="p" onclick="game('p')">
       <img src=".//imgs/paper.jpg" alt="paper">
     </div>
-    <div id="s">
+    <div id="s" onclick="game('s')">
       <img src=".//imgs/scissors.jpg" alt="scissors">
     </div>
-<!--
-    <input type="image" src=".//imgs/rock.jpg" alt="rock" id="r" onclick="click">
-    <input type="image" src=".//imgs/paper.jpg" alt="paper" id="p" onclick="click">
-    <input type="image" src=".//imgs/scissors.jpg" alt="scissors" id="s" onclick="click">-->
   </div>
 </body>
 <footer>
   <p>copywrite Erik Anderson &copy; 2022</p>
+  <script src="script.js" defer></script>
 </footer>
 </html>

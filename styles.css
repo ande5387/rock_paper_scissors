@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-#r, #p, #s {
+#r>img, #p>img, #s>img {
   border: 1px solid whitesmoke;
   border-radius: 10px;
 }
