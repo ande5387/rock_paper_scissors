@@ -19,24 +19,23 @@ function getComputerChoice() {
 
 function convertToWord(letter){
   if (letter == "r") return "Rock";
-  else if (letter == "p") return "paper";
-  else return "scissors";
+  else if (letter == "p") return "Paper";
+  else return "Scissors";
 
 }
 
-/*
 function endOfGame (){
   if (wins == 5) {
     if(!alert('You Win!\nPlay Again?')){window.location.reload();};
   }
   else if (losses == 5){
-    if(!alert('You Win!\nPlay Again?')){window.location.reload();};
+    if(!alert('You Lose!\nPlay Again?')){window.location.reload();};
   }
-  else continue;
 }
-*/
+
 function win(userChoice, computerChoice){
   wins++;
+  endOfGame();
   userWins_p.innerHTML = wins;
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
@@ -46,6 +45,7 @@ function win(userChoice, computerChoice){
 
 function loss(userChoice, computerChoice){
   losses++;
+  endOfGame();
   userWins_p.innerHTML = wins;
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
