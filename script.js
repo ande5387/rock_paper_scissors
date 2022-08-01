@@ -1,22 +1,30 @@
-let wins = 0;
-let ties = 0;
-let losses = 0;
+const wins = 0;
+const ties = 0;
+const losses = 0;
+const userWins_p = document.getElementById("user-wins");
+const ties_p = document.getElementById("ties");
+const computerWins_p = document.getElementById("computer-wins");
+const restults_p = document.querySelector(".sTResults");
+const rock_input = document.getElementById("r");
+const paper_input = document.getElementById("p");
+const scissors_input = document.getElementById("s");
+
 
 // get computer choice of RPS
-getComputerChoice() => {
+function getComputerChoice() {
   const arr = ["r", "p", "c"];
   const computerChoice = Math.floor(Math.random() * arr.length);
 }
 // get user choice of RPS
-getUserChoice() =>{
+function getUserChoice() {
   let userChoice = ""
-  if(document.getElementById('rock').clicked == true){
+  if(rock_input.clicked == true){
     userChoice = r;
   } 
-  else if(document.getElementById('paper').clicked == true){
+  else if(paper_input.clicked == true){
     userChoice = p;
   } 
-  else if(document.getElementById('scissors').clicked == true){
+  else if(scissors_input.clicked == true){
     userChoice = s;
   } 
   else userChoice = "";
@@ -26,17 +34,17 @@ while (wins<=5 || losses <=5){
 
   if(getUserChoice() == getComputerChoice()){
     ties++;
-    document.getElementById("ties").innerHTML = ties;
+    ties_p.innerHTML=ties;
     break;
   } 
   else if (getUserChoice()> getComputerChoice()){
     wins++;
-    document.getElementById("wins").innerHTML = wins;
+    userWins_p.innerHTML = wins;
     break;
   } 
   else {
     losses++;
-    document.getElementById("wins").innerHTML = wins;
+    computerWins_p.innerHTML = losses;
   }
 }
 
