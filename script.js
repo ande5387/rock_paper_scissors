@@ -24,21 +24,27 @@ function convertToWord(letter){
 
 }
 
-function win(userChoice,computerChoice){
+function win(userChoice, computerChoice){
   wins++;
   userWins_p.innerHTML = wins;
+  ties_p.innerHTML = ties;
+  computerWins_p.innerHTML = losses;
   restults_p.innerHTML =convertToWord(userChoice) + " beats " + convertToWord(computerChoice);
 }
 
-function loss(userChoice,computerChoice){
+function loss(userChoice, computerChoice){
   losses++;
+  userWins_p.innerHTML = wins;
+  ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML = convertToWord(computerChoice) + " beats " + convertToWord(userChoice);
 }
 
-function loss(userChoice,computerChoice){
+function tie(){
   ties++;
+  userWins_p.innerHTML = wins;
   ties_p.innerHTML = ties;
+  computerWins_p.innerHTML = losses;
   restults_p.innerHTML = "Tie!";
 }
 
@@ -48,17 +54,17 @@ function game(userChoice) {
     case "rs":
     case "pr":
     case "sp":
-      console.log ("User Wins");
+      win();
       break;
     case "rp":
     case "ps":
     case "sr":
-      console.log("User Looses");
+      loss();
       break;
     case "rr":
     case "pp":
     case "ss":
-      console.log("Tie")
+      tie();
       break;
   }
 }
