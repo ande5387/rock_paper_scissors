@@ -1,6 +1,6 @@
-const wins = 0;
-const ties = 0;
-const losses = 0;
+let wins = 0;
+let ties = 0;
+let losses = 0;
 const userWins_p = document.getElementById("user-wins");
 const ties_p = document.getElementById("ties");
 const computerWins_p = document.getElementById("computer-wins");
@@ -8,6 +8,18 @@ const restults_p = document.querySelector(".sTResults");
 const rock_input = document.getElementById("r");
 const paper_input = document.getElementById("p");
 const scissors_input = document.getElementById("s");
+
+
+rock_input.addEventListener('click',function() {
+  console.log('you clicked rock')
+});
+paper_input.addEventListener('click',function() {
+  console.log('you clicked paper')
+});
+scissors_input.addEventListener('click',function() {
+  console.log('you clicked scissors')
+});
+
 
 
 // get computer choice of RPS
