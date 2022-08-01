@@ -30,6 +30,7 @@ function win(userChoice, computerChoice){
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML =convertToWord(userChoice) + " beats " + convertToWord(computerChoice);
+  console.log(wins);
 }
 
 function loss(userChoice, computerChoice){
@@ -38,6 +39,7 @@ function loss(userChoice, computerChoice){
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML = convertToWord(computerChoice) + " beats " + convertToWord(userChoice);
+  console.log(losses);
 }
 
 function tie(){
@@ -46,6 +48,7 @@ function tie(){
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML = "Tie!";
+  console.log(ties);
 }
 
 function game(userChoice) {
