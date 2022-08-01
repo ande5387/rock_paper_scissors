@@ -1,6 +1,7 @@
 let wins = 0;
 let ties = 0;
 let losses = 0;
+
 const userWins_p = document.getElementById("user-wins");
 const ties_p = document.getElementById("ties");
 const computerWins_p = document.getElementById("computer-wins");
@@ -10,39 +11,72 @@ const paper_input = document.getElementById("p");
 const scissors_input = document.getElementById("s");
 
 
-rock_input.addEventListener('click',function() {
-  console.log('you clicked rock')
-});
-paper_input.addEventListener('click',function() {
-  console.log('you clicked paper')
-});
-scissors_input.addEventListener('click',function() {
-  console.log('you clicked scissors')
-});
-
-
-
-// get computer choice of RPS
 function getComputerChoice() {
   const arr = ["r", "p", "c"];
-  const computerChoice = Math.floor(Math.random() * arr.length);
+  const computerChoice = Math.floor(Math.random() * 3);
+  return arr
 }
-// get user choice of RPS
-function getUserChoice() {
-  let userChoice = ""
-  if(rock_input.clicked == true){
-    userChoice = r;
-  } 
-  else if(paper_input.clicked == true){
-    userChoice = p;
-  } 
-  else if(scissors_input.clicked == true){
-    userChoice = s;
-  } 
-  else userChoice = "";
+
+function convertToWord(letter){
+  if (letter == "r") return "Rock";
+  else if (letter == "p") return "paper";
+  else return "scissors";
+
 }
+
+function win(userChoice,computerChoice){
+  wins++;
+  userWins_p.innerHTML = wins;
+  restults_p.innerHTML =convertToWord(userChoice) + " beats " + convertToWord(computerChoice);
+}
+
+function loss(userChoice,computerChoice){
+  losses++;
+  computerWins_p.innerHTML = losses;
+  restults_p.innerHTML = convertToWord(computerChoice) + " beats " + convertToWord(userChoice);
+}
+
+function loss(userChoice,computerChoice){
+  ties++;
+  ties_p.innerHTML = ties;
+  restults_p.innerHTML = "Tie!";
+}
+
+function game(userChoice) {
+  const computerChoice= getComputerChoice();
+  switch(userChoice + computerChoice){
+    case "rs":
+    case "pr":
+    case "sp":
+      console.log ("User Wins");
+      break;
+    case "rp":
+    case "ps":
+    case "sr":
+      console.log("User Looses");
+      break;
+    case "rr":
+    case "pp":
+    case "ss":
+      console.log("Tie")
+      break;
+  }
+}
+
+function main (){
+  rock_input.addEventListener('click',function() {
+    game("r");
+  })
+  paper_input.addEventListener('click',function() {
+    game("");
+  })
+  scissors_input.addEventListener('click',function() {
+    game("s");
+  })
+}
+
 // compair computerChoice to userChoice  and increment tally
-while (wins<=5 || losses <=5){
+/*while (wins<=5 || losses <=5){
 
   if(getUserChoice() == getComputerChoice()){
     ties++;
@@ -58,14 +92,12 @@ while (wins<=5 || losses <=5){
     losses++;
     computerWins_p.innerHTML = losses;
   }
-}
+}*/
 
 // winner declared
-if (wins == 5){
+/*if (wins == 5){
   document.getElementById(".sTResaults").innerHTML = "User Wins";
 }
 else if(losses == 5){
   document.getElementById(".sTResaults").innerHTML = "Computer Wins";
-}
-
-
+}*/
