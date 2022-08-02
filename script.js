@@ -10,6 +10,17 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 
+// event listeners
+rock_div.addEventListener('click',function() {
+  game("r");
+})
+paper_div.addEventListener('click',function() {
+  game("p");
+})
+scissors_div.addEventListener('click',function() {
+  game("s");
+})
+
 
 function getComputerChoice() {
   const arr = ["r", "p", "c"];
@@ -39,7 +50,6 @@ function win(userChoice, computerChoice){
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML =convertToWord(userChoice) + " beats " + convertToWord(computerChoice);
-  endOfGame();
 }
 
 function loss(userChoice, computerChoice){
@@ -48,7 +58,6 @@ function loss(userChoice, computerChoice){
   ties_p.innerHTML = ties;
   computerWins_p.innerHTML = losses;
   restults_p.innerHTML = convertToWord(computerChoice) + " beats " + convertToWord(userChoice);
-  endOfGame();
 }
 
 function tie(){
@@ -79,19 +88,4 @@ function game(userChoice) {
       tie();
       break;
   }
-}
-
-
-
-// event listeners (not curretly functioning propperly)
-function main(){
-  rock_div.addEventListener('click',function() {
-    game("r");
-  })
-  paper_div.addEventListener('click',function() {
-    game("p");
-  })
-  scissors_div.addEventListener('click',function() {
-    game("s");
-  })
 }
